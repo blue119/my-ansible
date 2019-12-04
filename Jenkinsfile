@@ -18,7 +18,7 @@ pipeline {
           git (url: 'https://github.com/blue119/ansible-wordpress.git', branch: 'master')
         }
         dir('trigger-ci') {
-          git (url: 'https://github.com:blue119/trigger-ci.git', branch: 'master')
+          git (url: 'https://github.com/blue119/trigger-ci.git', branch: 'master')
         }
 
         //git (
