@@ -12,13 +12,13 @@ pipeline {
       steps {
         echo 'checkout kernel_user_space_interfaces_example'
         dir('kernel_user_space_interfaces_example') {
-          git (url: 'https://github.com/blue119/kernel_user_space_interfaces_example.git', branch: 'master')
+          git (poll: true, url: 'https://github.com/blue119/kernel_user_space_interfaces_example.git', branch: 'master')
         }
         dir('ansible-wordpress') {
-          git (url: 'https://github.com/blue119/ansible-wordpress.git', branch: 'master')
+          git (poll: true, url: 'https://github.com/blue119/ansible-wordpress.git', branch: 'master')
         }
         dir('trigger-ci') {
-          git (url: 'https://github.com/blue119/trigger-ci.git', branch: 'master')
+          git (poll: true, url: 'https://github.com/blue119/trigger-ci.git', branch: 'master')
         }
 
         //git (
