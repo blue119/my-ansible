@@ -1,6 +1,14 @@
 pipeline {
+
   agent {
-    node { label 'hw-01' }
+    node {
+      label 'hw-01'
+      properties([
+        pipelineTriggers([
+            [$class: "SCMTrigger", scmpoll_spec: "H/2 * * * *"],
+        ])
+      ])
+    }
   }
 
   environment {
