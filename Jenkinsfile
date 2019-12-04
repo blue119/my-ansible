@@ -10,8 +10,10 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
+        sh 'ls'
         echo 'checkout kernel_user_space_interfaces_example'
         git url: 'https://github.com/blue119/kernel_user_space_interfaces_example.git', branch: 'master'
+        sh 'ls'
         //git (
         //  url: 'https://github.com/blue119/kernel_user_space_interfaces_example.git',
         //  poll: true,
