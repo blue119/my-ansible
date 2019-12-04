@@ -13,14 +13,10 @@ pipeline {
         sh 'ls'
         echo 'checkout kernel_user_space_interfaces_example'
         dir('kernel_user_space_interfaces_example') {
-          git
-            url: 'https://github.com/blue119/kernel_user_space_interfaces_example.git',
-            branch: 'master'
+          git url: 'https://github.com/blue119/kernel_user_space_interfaces_example.git', branch: 'master'
         }
         dir('ansible-wordpress') {
-          git
-            url: 'https://github.com/blue119/ansible-wordpress.git',
-            branch: 'master'
+          git url: 'https://github.com/blue119/ansible-wordpress.git', branch: 'master'
         }
         sh 'ls'
 
