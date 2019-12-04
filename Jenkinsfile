@@ -3,11 +3,6 @@ pipeline {
   agent {
     node {
       label 'hw-01'
-      //properties([
-      //  pipelineTriggers([
-      //      [$class: "SCMTrigger", scmpoll_spec: "H/2 * * * *"],
-      //  ])
-      //])
     }
   }
 
@@ -15,7 +10,8 @@ pipeline {
         ENV_CCC = "@#@"
     }
 
-  triggers { cron('H */4 * * 1-5') }
+  //triggers { cron('H */4 * * 1-5') }
+  triggers { pollSCM('H/3 * * * 1-5') }
 
   stages {
     stage('Checkout') {
