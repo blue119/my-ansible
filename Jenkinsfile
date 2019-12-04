@@ -15,7 +15,7 @@ pipeline {
         ENV_CCC = "@#@"
     }
 
-  triggers { cron('H/3 * * * 1-5') }
+  triggers { cron('H */4 * * 1-5') }
 
   stages {
     stage('Checkout') {
